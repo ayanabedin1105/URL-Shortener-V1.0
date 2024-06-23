@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URL Shortener using Python</title>
+  </head>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS -->
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/styles.css') }}"
+  />
+  <body>
+    <div class="wrapper">
+        <header>
+            <h1><b>URL Shortener<b></h1>
+            <p>Paste a url to shorten it!</p>
+          </header>
+        <div class="form">
+            <form method="post" action="/">
+                <label for="url">Enter an https:// URL:</label>
+                <input type="url"
+                  name="url"
+                  id="url"
+                  placeholder="https://www.xyz.com"
+                  pattern="https://.*" size="50"
+                    value="{{old_url}}"
+                  required  
+                >
+                <button type="submit" value="submit">Submit</button>
+                <br>
+                <label>Generated URL: </label>
+                <input name="generated_url" value="{{new_url}}" style="margin-top: 10px; margin-left:35px" size="50"></input>
+              </form>
+        </div>
+    </div>
+
+    
+  </body>
+</html>
